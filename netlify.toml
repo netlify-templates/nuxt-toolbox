@@ -1,0 +1,12 @@
+# This is the configuration file for Netlify 
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+# Learn more about redirects here
+# https://docs.netlify.com/routing/redirects/#syntax-for-the-netlify-configuration-file
+# https://docs.netlify.com/routing/redirects/redirect-options/
+
+[[redirects]]
+from = "/api/*" # simplify all calls to serverless functions
+to = "/.netlify/functions/:splat" # all function calls will go to this path
+status = 200 # ok code
+force = true # ensure to always redirect
