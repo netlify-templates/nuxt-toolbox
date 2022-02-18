@@ -18,7 +18,7 @@ $ npm run generate
 ```
 ## Redirects
 
-In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predicatbly, redirecting based on country or language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/). 
+In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/). 
 
 In the example we'll be using redirects to have a more simplified call to Netlify functions. Technically when you call a function you will be making a call to `https://yoursite.netlify.com/.netlify/functions/functionName`. In order to make a cleaner path we'll redirect all calls from a path including `/api` to call on the Netlify functions. So the path will be simplified to `https://yoursite.netlify.com/api/functionName`, a lot easier to remember too. 
 
