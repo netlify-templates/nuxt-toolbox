@@ -52,6 +52,49 @@ You can use `netlify dev` from the command line to access project information li
 - [Netlify Dev Overview](https://www.youtube.com/watch?v=RL_gtVZ_79Q&t=812s)
 - [Netlify Edge, CDN deployment](https://www.netlify.com/products/edge/)
 
+## Forms
+---
+
+Netlify Forms are a way to wire up your native HTML into being able to seamlessly handle submissions. To get a form working, we need to add two extra things:
+
+1. An extra attribute on the `form` tag, `netlify`
+
+Adding this attribute to our `form` tag will let Netlify know when it loads the page, that it needs to be aware of submissions made through it.
+
+2. A hidden input in the form, `<input type="hidden" name="form-name" value="feedback" />`
+
+Adding this extra input allows our form to be given a name that Netlify can store submissions to. It is a hidden input so your users won't see it but it will pass along the name of our form to Netlify when we submit. In our Netlify Admins site under Forms, we will see our Active Form named `feedback` and all submissions will go there.
+
+With both of those we're ready for folks to give us feedback!
+
+### Adding a custom submission page
+
+While Netlify provides a default submission page for folks, we can customize it as well! With the `action` attribute on the `form` tag we will be able to direct our users to our own page.
+
+In [`components/feedbackForm.vue`](./components/feedbackForm.vue) you'll see the form has the attribute `action="/testpage"` this will take our user to the custom route `/testpage` which we created under [`pages/TestPage.vue`](./pages/TestPage.vue). As long as the page exists, you can direct folks to it!
+
+### Blocking bot spam with a honeypot field
+
+Many bots scan through webpages and try to see what pages and forms they can get access to. Instead of letting our website receive spam submissions, we can filter out unrelated submissions with a visually-hidden input field.
+
+```
+<p class="hidden">
+    <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+</p>
+```
+
+Since screenreader users will still have this announced, it is important for us to
+communicate that this is a field not meant to be filled in.
+
+### Forms Resources
+
+- [Netlify Forms Setup](https://docs.netlify.com/forms/setup/)
+- [Netlify Forms](https://www.netlify.com/products/forms/#main)
+- [Netlify Forms - Form Triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
+- [Netlify Forms - Using reCAPTCHA 2](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge)
+
 ## Redirects
 ---
 In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/). 
