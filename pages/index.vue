@@ -1,9 +1,8 @@
 <template>
-  <Tutorial />
+  <FeedbackForm />
 </template>
-
-<script>
-export default {
-  name: 'IndexPage',
+<style>
+* {
+  font-family: 'Helvetica', sans-serif;
 }
-</script>
+</style>
