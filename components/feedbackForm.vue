@@ -4,7 +4,6 @@
       netlify
       action="/testpage"
       method="post"
-      name="feedback"
       data-netlify-honeypot="bot-field"
     >
       <p class="hidden">
