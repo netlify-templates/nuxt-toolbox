@@ -1,6 +1,12 @@
 <template>
   <div class="feedback-form">
-    <form netlify method="POST" name="feedback">
+    <form
+      netlify
+      action="/"
+      method="post"
+      name="feedback"
+      data-netlify-honeypot="bot-field"
+    >
       <input type="hidden" name="form-name" value="feedback" />
       <label for="name">Name</label>
       <input type="text" name="name" />
