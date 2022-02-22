@@ -7,6 +7,11 @@
       name="feedback"
       data-netlify-honeypot="bot-field"
     >
+      <p class="hidden">
+        <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
       <input type="hidden" name="form-name" value="feedback" />
       <label for="name">Name</label>
       <input type="text" name="name" />
@@ -38,5 +43,15 @@ button {
   border: 1px solid black;
   color: white;
   width: 50%;
+}
+
+.hidden {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
 </style>
