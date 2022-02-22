@@ -1,6 +1,16 @@
 {
   "name": "nuxt-toolbox",
   "version": "1.0.0",
+  "author": "Netlify Inc",
+  "contributors": [
+    "Tara Manicsic",
+    "Prince Wilson",
+    "Charlie Gerard"
+  ],
+  "homepage": "https://github.com/netlify-templates/nuxt-toolbox",
+  "bugs": {
+    "url": "https://github.com/netlify-templates/nuxt-toolbox/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
