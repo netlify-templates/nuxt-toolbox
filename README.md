@@ -18,7 +18,7 @@ $ npm run generate
 ```
 
 ## Deploy to Netlify
----
+
 Want to deploy immediately? Click this button
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nuxt-toolbox)
@@ -53,7 +53,6 @@ You can use `netlify dev` from the command line to access project information li
 - [Netlify Edge, CDN deployment](https://www.netlify.com/products/edge/)
 
 ## Forms
----
 
 Netlify Forms are a way to wire up your native HTML into being able to seamlessly handle submissions. To get a form working, we need to add two extra things:
 
@@ -77,7 +76,7 @@ In [`components/feedbackForm.vue`](./components/feedbackForm.vue) you'll see the
 
 Many bots scan through webpages and try to see what pages and forms they can get access to. Instead of letting our website receive spam submissions, we can filter out unrelated submissions with a visually-hidden input field.
 
-```
+```html
 <p class="hidden">
     <label>
         Don’t fill this out if you’re human: <input name="bot-field" />
@@ -108,7 +107,7 @@ For this to work we also need to add a `netlify-honeypot` attribute to the form 
 - [Netlify Forms - Using reCAPTCHA 2](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge)
 
 ## Redirects
----
+
 In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/). 
 
 In the example we'll be using redirects to have a shorter endpoint to Netlify functions. By default, you call a Netlify function when requesting a path like `https://yoursite.netlify.com/.netlify/functions/functionName`. Instead, we'll redirect all calls from a path including `/api` to call on the Netlify functions. So the path will be `https://yoursite.netlify.com/api/functionName`, a lot easier to remember too. 
