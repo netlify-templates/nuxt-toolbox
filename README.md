@@ -141,15 +141,25 @@ There are many ways to use redirects. Check out the resouces below to learn more
 - [Redirect by country or language](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
 - [On-Demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders/)
 
-## Serverless Functions
+## Netlify Functions
 
 With Netlify, you can build out server-side code without having to setup and maintain a dedicated server. Inside of our default folder path, [`netlify/functions`](./netlify/functions) you can see an example of the format for JavaScript functions with the [`joke.js`](./netlify/functions/joke.js) file.
 
-The function format expects a function named `handler` to be exported. This will be the function that will be invoked whenever a client makes a request to the generated endpoints. The endpoint's format is followed as `/.netlify/functions/joke`. So whenever the site is deployed, if you go to `https://<site base url>/.netlify/functions/joke` you will see a random joke!
+The function format expects an `async` function named `handler` to be exported.*
+
+```js
+export const handler = async () => {
+  // Your code goes in here!
+}
+```
+
+* *Note: ESLint may report that the async is unnecessary if there is no `await` code within the function, but the `async` is required. Do not delete it.*
+
+This will be the function that will be invoked whenever a client makes a request to the generated endpoints. The endpoint's format is followed as `/.netlify/functions/joke`. So whenever the site is deployed, if you go to `https://<site base url>/.netlify/functions/joke` you will see a random joke!
 
 > Side note: In our example, we're using `import` to include data from another location and `export const const handler` to let our function be consumed by Netlify. We're able to do this because of [esbuild](https://esbuild.github.io). This is a bundler configuration we set in our `netlify.toml` under `[functions]`.
 
-### Serverless Functions Resources
+### Netlify Functions Resources
 
 There is quite a bit you can do with these functions, so here are some additional resources to learn more!
 
