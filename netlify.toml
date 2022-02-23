@@ -1,4 +1,4 @@
-## This is the configuration file for Netlify 
+## This is the configuration file for Netlify
 ## https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
@@ -15,3 +15,6 @@
   to = "/.netlify/functions/:splat" # all function calls will go to this path
   status = 200 # ok code
   force = true # ensure to always redirect
+
+[functions]
+  node_bundler = "esbuild"

@@ -3,7 +3,6 @@
     <form
       netlify
       netlify-honeypot
-      action="/testpage"
       method="post"
     >
       <p class="hidden">

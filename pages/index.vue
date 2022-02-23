@@ -1,6 +1,10 @@
 <template>
-  <FeedbackForm />
+  <main>
+    <FeedbackForm />
+    <JokeBlock />
+  </main>
 </template>
+
 <style>
 * {
   font-family: 'Helvetica', sans-serif;
