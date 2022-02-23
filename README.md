@@ -1,4 +1,7 @@
+![netlify + nuxt logo](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1645592629/CleanShot_2022-02-22_at_22.47.16_2x_ltqti0.png)
 # Nuxt Toolbox Template
+
+This template gives you the scaffolding for [Netlify Functions](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format), [Forms](https://www.netlify.com/products/forms/#main), and [Redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-netlify-configuration-file).
 
 ## Build Setup
 
@@ -23,11 +26,16 @@ Want to deploy immediately? Click this button
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nuxt-toolbox)
 
-To deploy using the Netlify cli:
+To deploy using the Netlify CLI either clone this repo or use the 'Template' button at the top of this repo. Then install the Netlify CLI tool and run `netlify init` or use the `netlify sites:create-template` command in you terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)).
 
 ```bash
+git clone https://github.com/netlify-templates/nuxt-toolbox 
 npm install netlify-cli -g # to install the Netlify CLI tool globally
 netlify init # initialize a new Netlify project & deploy
+
+# or
+
+netlify sites:create-template # this will walk you through creating a new site w the template
 ```
 
 It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `npm run generate` to create a static project and locate the build project in the `dist` directory.
@@ -35,6 +43,8 @@ It will use the information from the included Netlify configuration file, [`netl
 The `init` process will also set up continuous deployemnt for your project so that a new build will be triggered & deployed when you push code to the repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
 
 You can also use `netlify deploy (--prod)` to manually deploy and `netlify open` to open your project dashboard.
+
+
 
 > 💡 we only have so many keystrokes to give, use `ntl` shorthand for `netlify` or make [an alias of your own](https://www.netlify.com/blog/2020/04/12/speed-up-productivity-with-terminal-aliases/) to save hours...of accumulated miliseconds
 
