@@ -1,13 +1,9 @@
 <template>
   <div class="feedback-form">
-    <form
-      netlify
-      netlify-honeypot
-      method="post"
-    >
+    <form netlify netlify-honeypot method="post" action="/feedback">
       <p class="hidden">
         <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
+          Don’t fill this out if you’re human: <input name="bot-field" />
         </label>
       </p>
       <input type="hidden" name="form-name" value="feedback" />
@@ -44,12 +40,12 @@ button {
 }
 
 .hidden {
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 1px;
 }
 </style>
