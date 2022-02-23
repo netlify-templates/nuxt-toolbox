@@ -1,7 +1,7 @@
 // Jokes provided from the lovely folks at https://icanhazdadjoke.com
-import jokes from './jokes.json'
+import jokes from './data/jokes.json'
 
-export const handler = (event) => {
+export const handler = async () => {
   // Generates a random index based on the length of the jokes array
   const randomIndex = Math.floor(Math.random() * jokes.length)
   const randomJoke = jokes[randomIndex]
