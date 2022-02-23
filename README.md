@@ -1,5 +1,7 @@
 # Nuxt Toolbox Template
 
+This is a [NuxtJS](https://nuxtjs.org/) v2 project. It is a reference on how to integrate commonly used features within Netlify for Nuxt.js.
+
 ## Build Setup
 
 ```bash
@@ -23,7 +25,9 @@ Want to deploy immediately? Click this button
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nuxt-toolbox)
 
-To deploy using the Netlify cli:
+(Clicking this button will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
+
+### To deploy using the [Netlify cli](https://cli.netlify.com/):
 
 ```bash
 npm install netlify-cli -g # to install the Netlify CLI tool globally
@@ -80,9 +84,9 @@ Many bots scan through webpages and try to see what pages and forms they can get
 
 ```html
 <p class="hidden">
-    <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
-    </label>
+  <label>
+    Don’t fill this out if you’re human: <input name="bot-field" />
+  </label>
 </p>
 ```
 
@@ -92,13 +96,9 @@ communicate that this is a field not meant to be filled in.
 For this to work we also need to add a `netlify-honeypot` attribute to the form element.
 
 ```html
-<form
-  netlify
-  netlify-honeypot
-  action="/testpage"
-  method="post"
->
+<form netlify netlify-honeypot action="/testpage" method="post"></form>
 ```
+
 [See it here in the template code.](https://github.com/netlify-templates/nuxt-toolbox/blob/abb24c52738d79bcd11ff8a1bc70e0d2d250e7f1/components/feedbackForm.vue#L3)
 
 ### Forms Resources
@@ -110,8 +110,7 @@ For this to work we also need to add a `netlify-honeypot` attribute to the form 
 
 ## Redirects
 
-In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/). 
-
+In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/).
 
 In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/).
 
@@ -159,3 +158,10 @@ There is quite a bit you can do with these functions, so here are some additiona
 - [What are Background Functions](https://www.netlify.com/blog/2021/01/07/what-are-background-functions/)
 - [Netlify Functions - Examples](https://functions.netlify.com/examples/)
 - [Using esbuild as your bundler for new ECMAScript Features](https://www.netlify.com/blog/2021/04/02/modern-faster-netlify-functions/)
+
+## I want moar!
+
+If you want to discover more Netlify features via this template, here's a couple of things you could try:
+
+- Add a Netlify plugin, either via [the UI](https://app.netlify.com/plugins) or [`netlify.toml`](https://docs.netlify.com/configure-builds/build-plugins/). For example, why not try the `A11y` plugin to run some accessibility testing on your site!
+- [Create environment variables using the CLI](https://www.netlify.com/blog/2021/07/12/managing-environment-variables-from-your-terminal-with-netlify-cli/) to store secret tokens (e.g. API key), and use them in the Netlify function to fetch data from your favorite API.
