@@ -1,6 +1,12 @@
 <template>
   <div class="feedback-form">
-    <form netlify netlify-honeypot method="post">
+    <form
+      netlify
+      netlify-honeypot
+      name="feedback"
+      method="POST"
+      action="/success"
+    >
       <p class="hidden">
         <label>
           Don’t fill this out if you’re human: <input name="bot-field" />
@@ -17,6 +23,7 @@
     </form>
   </div>
 </template>
+
 <style scoped>
 .feedback-form {
   margin: 40px 40px;
