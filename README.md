@@ -29,7 +29,7 @@ Want to deploy immediately? Click this button
 
 (Clicking this button will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
 
-### To deploy using the [Netlify cli](https://cli.netlify.com/):
+### To deploy using the [Netlify CLI](https://cli.netlify.com/):
 Click the 'Use the Template' button at the top of this repo. Then install the Netlify CLI tool and run `netlify init`. Or straight from the Netlify CLI, use the `netlify sites:create-template` command in you terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)) to do the entire flow for you.
 ```bash
 git clone https://github.com/netlify-templates/nuxt-toolbox 
