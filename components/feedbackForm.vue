@@ -2,9 +2,9 @@
   <div class="feedback-form">
     <form
       netlify
+      netlify-honeypot
       action="/testpage"
       method="post"
-      data-netlify-honeypot="bot-field"
     >
       <p class="hidden">
         <label>
