@@ -99,7 +99,7 @@ communicate that this is a field not meant to be filled in.
 For this to work we also need to add a `netlify-honeypot` attribute to the form element.
 
 ```html
-<form netlify netlify-honeypot action="/testpage" method="post"></form>
+<form netlify netlify-honeypot action="/feedback" method="post"></form>
 ```
 
 [See it here in the template code.](https://github.com/netlify-templates/nuxt-toolbox/blob/abb24c52738d79bcd11ff8a1bc70e0d2d250e7f1/components/feedbackForm.vue#L3)
