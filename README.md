@@ -27,10 +27,11 @@ Want to deploy immediately? Click this button
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nuxt-toolbox)
 
-(Clicking this button will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
+Clicking this button will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
 
-### To deploy using the [Netlify CLI](https://cli.netlify.com/):
+### Deploy using the [Netlify CLI](https://cli.netlify.com/):
 Click the 'Use the Template' button at the top of this repo. Then install the Netlify CLI tool and run `netlify init`. Or straight from the Netlify CLI, use the `netlify sites:create-template` command in you terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)) to do the entire flow for you.
+
 ```bash
 git clone https://github.com/netlify-templates/nuxt-toolbox 
 npm install netlify-cli -g # to install the Netlify CLI tool globally
@@ -79,7 +80,7 @@ With both of those we're ready for folks to give us feedback!
 
 While Netlify provides a default submission page for folks, we can customize it as well! With the `action` attribute on the `form` tag we will be able to direct our users to our own page.
 
-In [`components/feedbackForm.vue`](./components/feedbackForm.vue) you'll see the form has the attribute `action="/testpage"` this will take our user to the custom route `/testpage` which we created under [`pages/TestPage.vue`](./pages/TestPage.vue). As long as the page exists, you can direct folks to it!
+In [`components/feedbackForm.vue`](./components/feedbackForm.vue) you'll see the form has the attribute `action="/success"` this will take our user to the custom route `/success` which we created under [`pages/Success.vue`](./pages/Success.vue). As long as the page exists, you can direct folks to it!
 
 ### Blocking bot spam with a honeypot field
 
@@ -110,6 +111,35 @@ For this to work we also need to add a `netlify-honeypot` attribute to the form 
 - [Netlify Forms](https://www.netlify.com/products/forms/#main)
 - [Netlify Forms - Form Triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
 - [Netlify Forms - Using reCAPTCHA 2](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge)
+
+## Netlify Functions
+
+With Netlify, you can build out server-side code without having to setup and maintain a dedicated server. Inside of our default folder path, [`netlify/functions`](./netlify/functions) you can see an example of the format for JavaScript functions with the [`joke.js`](./netlify/functions/joke.js) file.
+
+The function format expects an `async` function named `handler` to be exported.*
+
+```js
+export const handler = async () => {
+  // Your code goes in here!
+}
+```
+
+* *Note: ESLint may report that the async is unnecessary if there is no `await` code within the function, but the `async` is required. Do not delete it.*
+
+This will be the function that will be invoked whenever a client makes a request to the generated endpoints. The endpoint's format is followed as `/.netlify/functions/joke`. So whenever the site is deployed, if you go to `https://<site base url>/.netlify/functions/joke` you will see a random joke!
+
+> Side note: In our example, we're using `import` to include data from another location and `export const const handler` to let our function be consumed by Netlify. We're able to do this because of [esbuild](https://esbuild.github.io). This is a bundler configuration we set in our `netlify.toml` under `[functions]`.
+
+### Netlify Functions Resources
+
+There is quite a bit you can do with these functions, so here are some additional resources to learn more!
+
+- [Netlify Function Format](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format)
+- [Build Netlify Functions with TypeScript](https://docs.netlify.com/functions/build-with-typescript/)
+- [Event-triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
+- [What are Background Functions](https://www.netlify.com/blog/2021/01/07/what-are-background-functions/)
+- [Netlify Functions - Examples](https://functions.netlify.com/examples/)
+- [Using esbuild as your bundler for new ECMAScript Features](https://www.netlify.com/blog/2021/04/02/modern-faster-netlify-functions/)
 
 ## Redirects
 
@@ -143,34 +173,6 @@ There are many ways to use redirects. Check out the resouces below to learn more
 - [Redirect by country or language](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
 - [On-Demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders/)
 
-## Netlify Functions
-
-With Netlify, you can build out server-side code without having to setup and maintain a dedicated server. Inside of our default folder path, [`netlify/functions`](./netlify/functions) you can see an example of the format for JavaScript functions with the [`joke.js`](./netlify/functions/joke.js) file.
-
-The function format expects an `async` function named `handler` to be exported.*
-
-```js
-export const handler = async () => {
-  // Your code goes in here!
-}
-```
-
-* *Note: ESLint may report that the async is unnecessary if there is no `await` code within the function, but the `async` is required. Do not delete it.*
-
-This will be the function that will be invoked whenever a client makes a request to the generated endpoints. The endpoint's format is followed as `/.netlify/functions/joke`. So whenever the site is deployed, if you go to `https://<site base url>/.netlify/functions/joke` you will see a random joke!
-
-> Side note: In our example, we're using `import` to include data from another location and `export const const handler` to let our function be consumed by Netlify. We're able to do this because of [esbuild](https://esbuild.github.io). This is a bundler configuration we set in our `netlify.toml` under `[functions]`.
-
-### Netlify Functions Resources
-
-There is quite a bit you can do with these functions, so here are some additional resources to learn more!
-
-- [Netlify Function Format](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format)
-- [Build Netlify Functions with TypeScript](https://docs.netlify.com/functions/build-with-typescript/)
-- [Event-triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
-- [What are Background Functions](https://www.netlify.com/blog/2021/01/07/what-are-background-functions/)
-- [Netlify Functions - Examples](https://functions.netlify.com/examples/)
-- [Using esbuild as your bundler for new ECMAScript Features](https://www.netlify.com/blog/2021/04/02/modern-faster-netlify-functions/)
 
 ## I want moar!
 
