@@ -34,7 +34,9 @@ Click the 'Use the Template' button at the top of this repo. Then install the Ne
 
 ```bash
 git clone https://github.com/netlify-templates/nuxt-toolbox 
+
 npm install netlify-cli -g # to install the Netlify CLI tool globally
+
 netlify init # initialize a new Netlify project & deploy
 ```
 
