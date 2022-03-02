@@ -27,7 +27,7 @@
 <style scoped>
 .feedback-form {
   margin: 40px 40px;
-  min-width: 300px;
+  min-width: 250px;
   width: 45%;
 }
 input,
