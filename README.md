@@ -183,4 +183,7 @@ If you want to discover more Netlify features via this template, here's a couple
 - [Create environment variables using the CLI](https://www.netlify.com/blog/2021/07/12/managing-environment-variables-from-your-terminal-with-netlify-cli/) to store secret tokens (e.g. API key), and use them in the Netlify function to fetch data from your favorite API.
 
 ## Nuxt Toolbox Template - Walkthrough
-- [Video Link](https://www.youtube.com/watch?v=yk1CV5avdJE)
+
+https://user-images.githubusercontent.com/76533034/156563030-e3c0c2a1-2e3a-43f0-bcf5-5ea891289553.mp4
+
+
