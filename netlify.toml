@@ -18,3 +18,11 @@
 
 [functions]
   node_bundler = "esbuild"
+
+[[plugins]]
+  package = "netlify-plugin-cypress"
+  [plugins.inputs.postBuild]
+    enable = true
+
+  [plugins.inputs]
+    enable = false
