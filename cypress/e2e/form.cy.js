@@ -38,7 +38,6 @@ describe('Testing form', () => {
     cy.get('[type="submit"]').click()
    
     cy.url().should('include', '/success')
-    // cy.get('h1').should('contain', 'Thanks for your feedback!')
 
   })
 })
