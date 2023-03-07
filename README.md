@@ -1,5 +1,5 @@
 # Nuxt Toolbox Template
-![template](https://user-images.githubusercontent.com/3611928/156432908-b29b4d5c-bff1-435b-b721-883142cd461b.png)
+![Netlify + Nuxt](https://user-images.githubusercontent.com/43764894/223556133-b99e4822-1da3-4f94-941e-fa95cfb42562.png)
 
 This is a [NuxtJS](https://nuxtjs.org/) v2 project. It is a reference on how to integrate commonly used features within Netlify for Nuxt.js.
 
